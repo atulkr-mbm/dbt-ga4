@@ -16,8 +16,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   ga4:
     staging:
-      +schema: mother_ny_pbc_ga4_stg_dev
-      +materialized: table
+      events:
+        +enabled: false   
+      +materialized: view
+    #+materialized: view
     marts:
-      +schema: mother_ny_pbc_ga4_mart_dev
       +materialized: table
